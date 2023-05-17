@@ -1,0 +1,83 @@
+eXtreme Programming 에 대한 설명으로 틀린 것 (No.3 -> 1)
+1. 애자일 개발 방법론 중 하나
+2. 소규모 개발 조직이 불확실 & 변경 많은 요구를 접하였을 때 적절한 방법
+3. Extreme Programming 을 구동시키는 원리 - 상식적인 원리 + 경험을 최대한 끌어 올리는 것
+4. 구체적인 실천 방법을 정의, 개발 문서보다 Source Code 에 중점을 둚
+
+유스케이스 (Use Case) 의 구성 요소 간의 관계에 포함되지 않는 것 (No.4 -> 3)
+1. 연관
+2. 확장
+3. 구체화
+4. 일반화
+
+= 1. 연관 관계 (Association) -> Use Case 와 Actor 간의 상호 작용이 있음을 표현
+= 2. 포함 관계 (Include) -> 하나의 Use Case 가 다른 Use Case 의 실행을 전제로 할 때 형성되는 관계
+= 3. 확장 관계 (Extend) -> 확장 기능 Use Case 와 확장 대상 Use Case 사이에 형성 되는 관계
+= 4. 일반화 관계 (Generalization) 
+  -> 유사한 Use Case 또는 Actor 를 모아 추상화한 Use Case
+  -> Actor 와 연결시켜 Group 을 만들어 이해도를 높이기 위한 관계
+
+미들웨어 (Middleware) 에 대한 설명으로 틀린 것 -> (No.7 -> 2)
+1. 여러 운영체제에서 응용 프로그램들 사이에 위치한 SW
+2. 미들웨어의 서비스 이용을 위해 사용자가 정보 교환 방법 등의 내부 동작을 쉽게 확인할 수 있어야 함
+3. SW Component 를 연결하기 위한 준비 된 인프라 구조를 제공
+4. 여러 Component 를 1대 1, 1대 다, 다대 다 등 여러 가지 형태로 연결 가능
+
+= 1. Client 와 Server 간의 통신을 담당하는 System SW
+= 2. 이기종 HW, SW, Network, Protocol, PC 환경, OS 환경 등에서 System 간의 표준화 된 연결을 도와주는 SW
+= 3. 표준화 된 인터페이스를 통하여 시스템 간의 데이터 교환에 있어 일관성 제공
+= 4. OS 와 Application 사이에서 중간 매개 역할을 하는 다목적 SW
+
+** 미들웨어 솔루션은 미들웨어의 서비스 이용을 위해 사용자가 정보 교환 방법 등의 내부 동작을 확인할 필요 없음 **
+
+객체지향 개념에서 다형성 (Polymorphism) 과 관련한 설명으로 틀린 것 -> (No.9 -> 4)
+1. 다형성은 현재 코드를 변경하지 않고 새로운 Class 를 쉽게 추가
+2. 여러 가지 형태를 가지고 있는 의미, 여러 형태를 받아들일 수 있는 특징
+3. 메소드 Overriding 은 상위 Class 에서 정의한 일반 메소드의 구현을 하위 Class 에서 무시하고 재정의 가능
+4. 메소드 Overloading, 매개 변수 타입 동일, Method 명을 다르게 함으로써 구현, 구분 가능
+
+= 1. Overloading -> 같은 이름의 Method 를 중복하여 정의하는 것
+= 2. Overloading -> 한 Class 내에서 Method 의 이름은 동일, 매개변수 수, 타입을 다르게 하여 재정의
+= 3. Overriding -> 상속 관계에서 발생, Superclass 의 Method 를 SubClass 에서도 동일한 Method 를 재정의
+
+GoF (Gang of Four) 디자인 패턴 생성, 구조, 행동 패턴의 세 그룹 분류할 때, 구조 패턴이 아닌 것 -> (No.15 -> 3)
+1. Adapter 패턴
+2. Bridge 패턴
+3. Builder 패턴
+4. Proxy 패턴
+
+= 1. 구조패턴 -> Adapter, Bridge, Composite, Decorator, Facade, Flysweight, Proxy
+= 2. 생성패턴
+  -> 1. 객체를 생성하는 것에 대한 Pattern
+  -> 2. 추상 팩토리 패턴 (Abstract Factory), Builder, Factory Method, Prototype, Singleton
+
+= 3. 구조패턴
+  -> 1. 구조를 통해 확장성을 꾀하는 Pattern
+  -> 2. Adapter, Bridge, Composite, Decoartor, Facade, Flysweight, Proxy
+
+= 4. 행위패턴
+  -> 1. 행위의 변경, 수정 등을 위한 Pattern
+  -> 2. 역할 사슬 패턴 (책임 연쇄, Chain of Responsibility), Command, Interpreter, Iterator (반복자)
+  -> 3. Mediator (중재자), Memento, Observer, State, Strategy (전략), Template Method, Visitor (방문자)
+
+UI 의 종류, 멀티 터치, 동작 인식 (Gesture Recognition), 사용자의 자연스러운 움직임을 인식하여 서로 주고받는 정보를 제공하는 사용자 인터페이스 -> (No.17 -> 3)
+1. GUI
+2. OUI
+3. NUI
+4. CLI
+
+= 1. CLI -> Command Line Interface, Text 형태 Interface
+= 2. GUI -> Graphical User Interface, 마우스로 선택하여 작업, Graphic 환경 Interface
+= 3. NUI -> Natural User Interface, 사용자 말, 행동으로 기기 조작하는 Interface
+= 4. VUI -> Voice User Interface, 사람의 음성으로 기기 조작하는 Interface
+= 5. OUI -> Organic User Interface, 모든 사물과 사용자 간의 상호작용을 위한 Interface
+
+Use Case Diagram 에 관련된 내용으로 틀린 것 -> (No.19 -> 1)
+1. 시스템과 상호작용하는 외부 시스템은 Actor 로 파악해서는 안됨
+2. Use Case 는 사용자 측면에서의 요구사항, 사용자가 원하는 목표를 달성하기 위해 수행할 내용을 기술
+3. 시스템 Actor 는 다른 프로젝트에서 이미 개발되어 사용 중, 본 시스템과 데이터 교환, 서로 연동되는 시스템
+4. Actor 가 인식할 수 없는 System 내부의 기능을 하나의 Use Case 로 파악해서는 안됨
+
+= 1. Actor -> 시스템과 상호작용하는 모든 것 (사람, 기계, 시스템)
+= 2. Actor -> 시스템과 상호작용하는 모든 외부 요소, 사람이나 외부 시스템을 의미
+

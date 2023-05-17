@@ -99,3 +99,27 @@ III. SW 개발 방법론
 2. XP 핵심 가치 -> 소통, 단순성, 피드백, 용기, 존중
 3. XP 핵심 가치는 모두 고객과의 소통과 관련되어 있음
 **
+
+- 4. XP 의 12가지 실천 항목 (Practice) & 3초 컷
+  = 1. Pair Programming -> 하나의 작업을 2명의 개발자가 공동 수행
+  = 2. Planning Game -> 게임처럼 목표를 두고 기획 수행
+  = 3. Test Driver Development -> Unit Test (단위 테스트) 후, 실제 코드 작성
+  = 4. Whole Team -> 고객을 Project 팀원으로 상주
+  = 5. Continuous Integration -> 상시 Build 및 배포 가능한 상태로 유지
+  = 6. Design Improvement -> 불필요한 기능 제거 및 Refactoring
+  = 7. Small Releases -> 필요한 기능들만 갖춘 간단한 System 을 빠르게 배포
+  = 8. Coding Standards -> 표준화된 코드 작성
+  = 9. Collective Ownership -> 소스 코드는 모든 개발자가 언제라도 수정 가능
+  = 10. Simple Design -> 가장 간결한 디자인 상태 유지
+  = 11. System Metaphor -> 최종 개발되어야 할 시스템 구조를 조망
+  = 12. Sustainable Pace -> 오버타임 지양
+
+- 5. 효과적인 프로젝트 관리를 위한 3대 요소
+  = 1. 사람 (People) - 인적 자원
+  = 2. 문제 (Problem) - 문제 인식
+  = 3. 프로세스 (Process) - 작업 계획
+
+- 6. 정형 기술 검토 지침사항
+  = 1. 의제와 그 범위 유지 & 참가자 수 제한
+  = 2. 각 Check List 작성, 자원 및 시간 일정 할당 & 개발자가 아닌 제품 검토에 집중
+  = 3. 논쟁과 반박 제한 & 검토 과정과 결과 재검토
