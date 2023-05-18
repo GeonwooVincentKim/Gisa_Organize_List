@@ -50,3 +50,57 @@
     => 2. 상위 모듈, Data 입출력 확인, 모듈인 Driver 작성
     => 3. 통합된 Cluster 단위로 Test
     => 4. Test 완료, Cluster 는 프로그램 구조의 상위로 이동 및 결합, Driver 는 실제 모듈로 대체
+
+= 3. 하향식 설계
+  -> 1. 계층 구조 상, System 주요 Component 찾고, 낮은 수준의 Component 들로 분해, 단계적 정제
+  -> 2. 메인 모듈의 설계에서 시작하여 단계적으로 구체화시키는 것
+  -> 3. 하향식 설계, 통합 검사, Interface 가 이미 정의되어 있어 통합 간단
+  -> 4. 하향식 설계, 레벨 낮은 데이터 구조 세부사항, 설계 초기 단계에서 필요
+
+= 4. 상향식 설계
+  -> 1. 가장 기본적인 Component 를 먼저 설계, 상위 수준 Component 를 설계
+  -> 2. 상향식 설계, 최하위 수준에서 각각의 모듈들을 설계, 완성되면 결합하여 검사
+  -> 3. 기존 Component 들을 조합, System 개발하는 경우에는 상향식이 적합
+  -> 4. System 명세가 명확한 경우, 모든 것을 새로 개발하는 작업에는 하향식이 적합
+  -> 5. Interface 가 이미 성립되어 있어야 기능 추가가 쉬움
+
+UML 다이어그램 중 정적 다이어그램이 아닌 것 (No.11 -> 3)
+1. 컴포넌트 다이어그램
+2. 배치 다이어그램
+3. 순차 다이어그램
+4. 패키지 다이어그램
+
+= 1. UML 다이어그램의 분류
+= 2. 정적 구조 (Class, 객체, Package, Component, 복합구조, Batch)
+= 3. 동적 구조 (UseCase, State, 활동, Sequence, 통신, 상호작용, Timing)
+  -> 1. Class Diagram => 객체 생성하기 위한 도구
+  -> 2. 객체 Diagram => 객체 간 연결관계 표현
+  -> 3. Package Diagram => 객체들의 그룹화 된 표현
+  -> 4. Component Diagram 
+    => 1. System 구성하는 Component 사이에 의존관계 표현
+    => 2. Component 는 1개 이상의 Class 로 구현됨
+
+  -> 5. 복합구조 Diagram -> Component, Class 의 내부 구조 보여주기 위해 사용 (내부 연결 형태 표현)
+  -> 6. Batch Diagram -> HW 자원에 연결된 SW Component Batch 표현
+  -> 7. UseCase Diagram -> 사용자 시각에서 SW 범위와 기능 표현
+  -> 8. State Diagram -> 시간에 따라 객체가 변하는 상태 표현
+  -> 9. 활동 Diagram -> 객체 동적행위를 활동으로 표현
+  -> 10. Sequence Diagram -> 객체 간 상호작용을 시간 순서에 따른 Message 로 표현
+  -> 11. 통신 Diagram -> 객체 간 상호작용을 관계 형태의 Message 로 표현
+  -> 12. 상호작용 Diagram -> 객체들의 상호작용 관계 표현
+  -> 13. Timing Diagram -> 객체 간 상태 변화를 구체적인 시간으로 표현
+
+= 4. 순차 (Sequence) Diagram 은 동적 Diagram
+
+입력되는 Data 를 Computer 프로세서 처리하기 전, 미리 처리, 프로세서 처리 시간 감소 Program, HW (No.19 -> 2)
+1. EAI
+2. FEP
+3. GPL
+4. Duplexing
+
+= 1. EAI (Enterprise Application Integration) -> 기업 응용 프로그램 구조적 통합 방안
+= 2. FEP (FrontEnd Processor) -> 입력되는 Data, 미리 처리, 프로세서 처리 시간 감소 Program, HW
+= 3. GPL (General Public License) -> 자유 SW 재단 (OSF) 에서 만든 자유 SW License
+= 4. Duplexing -> 이중화 (DB 회복 기법 중 가장 간단한 것)
+= 5. 이중 통신 (Duplex), 쌍방향 통신, 두 지점 사이에서 정보 주고 받는 전자 통신 System
+= 6. 전송 방향마다 두 개의 통신 선호 사용, 단순 & 전송로 아끼기 위해 여러 종류의 전송 방식이 쓰임
