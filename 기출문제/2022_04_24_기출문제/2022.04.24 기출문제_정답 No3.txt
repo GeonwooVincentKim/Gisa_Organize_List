@@ -1,0 +1,213 @@
+DB 의 트랜잭션 성질들 중, 다음 설명에 해당하는 것 (No.42 -> 1)
+- 트랜잭션 모든 연산들이 정상 수행 완료, 어떤 연산도 수행되지 않은 원래 상태가 되도록 해야 함
+
+1. Atomicity
+2. Consistency
+3. Isolation
+4. Durability
+
+= 1. 원자성 (Atomicity) -> 완전하게 수행 완료되지 않으면 전혀 수행되지 않아야 함
+= 2. 일관성 (Consistency) -> 시스템 고정 요소는 트랜잭션 수행 전후에 같아야 함
+= 3. 격리성 (Isolation, 고립성) -> 트랜잭션 실행 시 다른 트랜잭션 간섭을 받지 않아야 함
+= 4. 영속성 (Durability, 지속성) -> 트랜잭션 완료 결과가 DB 에 영구히 기억됨
+
+분산 DB 시스템과 관련된 설명으로 틀린 것 (No.43 -> 4)
+1. 물리적으로 분산된 DB 시스템을 논리적으로 하나의 DB 시스템처럼 사용할 수 있도록 한 것
+2. 물리적으로 분산, 지역별로 필요한 데이터 처리할 수 있는 지역 컴퓨터를 분산 처리기 (Distributed Processor)
+3. 분산 DB 시스템을 위한 통신 네트워크 구조가 데이터 통신에 영향을 주므로 효율적으로 설계
+4. DB 가 분산되어 있음을 사용자가 인식할 수 있도록 분산 투명성 (Distribution Transparency) 을 배제
+
+= 1. 위치 투명성 (Location Transparency) -> HW, HW 의 물리적 위치를 사용자가 알 필요가 없음
+= 2. 중복(복제) 투명성 (Replication Transparency) 
+  -> 사용자에게 통지 필요 X, 시스템 안 파일 & 자원들의 부가적 복사 자유롭게 할 수 있음
+
+= 3. 병행 투명성 (Concurrency Tranparency) -> 다중 사용자들이 자원들을 자동으로 공유 가능
+= 4. 장애 투명성 (Failure Transparency) -> 사용자들은 어느 위치의 시스템에 장애가 발생했는지 알 필요 없음
+
+다음 Table, 강남지점 판매량 많은 제품부터 출력, 가장 적절한 SQL 구문 (출력 -> 제품명 & 판매량) (No.44 -> 4)
+
+<푸드>
+지점명 제품명 판매량
+강남    비빔밥 500
+강북    도시락 300
+강남    도시락 200
+강남    미역국 550
+수원    비빔밥 600
+인천    비빔밥 800
+강남    잡채밥 250
+
+1. SELECT 제품명, 판매량 FROM 푸드 ORDER BY 판매량 ASC;
+2. SELECT 제품명, 판매량 FROM 푸드 ORDER BY 판매량 DESC;
+3. SELECT 제품명, 판매량 FROM 푸드 WHERE 지점명 = '강남지점' ORDER BY 판매량 ASC;
+4. SELECT 제품명, 판매량 FROM 푸드 WHERE 지점명 = '강남지점' ORDER BY 판매량 DESC;
+
+= 판매량 많은 제품부터 출력 -> 내림차순 정렬 적용, SQl 정렬은 ORDER BY 사용, 내림차순 DESC, 오름차순 ASC
+
+DB Index 와 관련한 설명으로 틀린 것 (No.45 -> 3)
+1. 문헌 색인, 사전과 같이 데이터를 쉽고 빠르게 찾을 수 있도록 만든 데이터 구조)
+2. 테이블에 붙여진 색인, 데이터 검색 시 처리 속도 향상
+3. Index 추가, 삭제 명령어는 각각 ADD, DELETE
+4. 대부분 DB 에서 Table 을 삭제하면 Index 도 같이 삭제
+
+= Index 
+  -> 1. DB 성능에 많은 영향을 주는 DBMS 구성 요소, Table 과 Cluster 연관, 독립적인 저장 공간 보유
+  -> 2. DB 에 저장된 자료를 더욱 빠르게 조회, 별도로 구성한 순서 Data 를 말함
+  -> 3. 대부분 DB 에서 Table 을 삭제하면 Index 도 같이 삭제됨
+  -> 4. Index 생성 (CREATE), Index 삭제 (DROP)
+
+SQL 기능 분류, REVOKE 문과 같이 Data 사용 권한을 관리하는데 사용하는 언어 (No.47 -> 3)
+1. Data Definition Language
+2. Data Manipulation Language
+3. Data Control Language
+4. Data User Language
+
+= 1. DCL 종류
+  -> 1. COMMIT => 명령어 수행 결과, 실제 물리적 Disk 로 저장, 명령어로 수행 성공 완료하였음을 선언
+  -> 2. ROLLBACK => 명령어 수행 실패 알림, 수행된 결과를 원상복구
+  -> 3. GRANT -> DB 사용자에게 사용권한 부여
+  -> 4. REVOKE -> DB 사용자로부터 사용권한 취소
+
+= 2. DDL
+  -> 1. CREATE -> SCHEMA, DOMAIN, TABLE, VIEW, INDEX 정의
+  -> 2. ALTER -> TABLE 에 대한 정의 변경
+  -> 3. DROP -> SCHEMA, DOMAIN, TABLE, VIEW, INDEX 삭제
+
+= 3. DML
+  -> 1. SELECT -> Table 에서 조건에 맞는 Tuple 검색
+  -> 2. INSERT -> Table 에 새로운 Tuple 삽입
+  -> 3. DELETE -> Table 에서 조건에 맞는 Tuple 을 삭제
+  -> 4. UPDATE -> Table 에서 조건에 맞는 Tuple 의 내용 변경
+
+Data Dictionary 에 대한 설명으로 틀린 것 (No.48 -> 2)
+1. System Catalog, System DataBase
+2. Data Dictionary 역시 DB 일종, 일반 사용자가 생성, 유지 및 수정 가능
+3. DB 에 대한 Data 인 Metadata 저장
+4. Data Dictionary 에 있는 Data 에 실제 접근 시 필요한 위치 정보 -> Data Directory 라는 곳에서 관리
+
+= 1. System 자신 필요, 여러 가지 객체 (Table, View, Index, DB, Package, 접근권한) 정보 포함 -> System DB
+= 2. System Catalog & Metadata
+= 3. System Catalog 자체, System Table 로 구성, SQL 문 이용하여 내용 검색 가능
+= 4. 사용자가 System Catalog 를 직접 갱신할 수 없음
+= 5. SQL 문, 여러 가지 객체에 변화를 주면 System 이 자동으로 갱신
+
+DB 에서 Relation 에 대한 설명으로 틀린 것 (No.49 -> 2)
+1. 모든 Tuple 은 서로 다른 값 소유
+2. 하나의 Relation 에서 Tuple 은 특정한 순서 가짐
+3. 각 속성은 Relation 내에서 유일한 이름을 가짐
+4. 모든 속성 값은 Atomic Value 를 가짐
+
+= 1. Tuple 유일성 -> 모든 Tuple 은 서로 다른 값을 가짐
+= 2. Tuple 무순서성 -> 하나의 Relation 에 Tuple 에 순서는 없음
+= 3. 속성 원자성 -> 속성 값은 원자 값을 가짐
+= 4. 속성 무순서성 -> 각 속성은 Relation 내에서 유일한 이름 가짐, 순서는 큰 의미가 없음
+
+DB 에서 View 에 대한 설명으로 틀린 것 (No.50 -> 4)
+1. View 는 다른 View 를 기반으로 새로운 View 생성 가능
+2. View 는 일종의 가상 Table, update 에는 제약 따름
+3. View 는 기본 Table 을 만드는 것처럼, create view 사용하여 생성 가능
+4. View 는 논리적으로 존재하는 기본 Table 과 다르게 물리적으로만 존재하며, Catalog 에 저장됨
+
+= View 는 논리적으로만 존재
+
+SQL 명령을 사용 용도에 따라 DDL, DML, DCL 로 구분, 그 성격이 나머지 셋과 다른 것 (No.52 -> 4)
+1. SELECT
+2. UPDATE
+3. INSERT
+4. GRANT
+
+= 1. DML
+  -> 1. SELECT => Table 에서 조건에 맞는 Tuple 검색
+  -> 2. INSERT => Table 에 새로운 Tuple 삽입
+  -> 3. UPDATE => Table 에서 조건에 맞는 Tuple 내용 갱신
+  -> 4. DELETE => Table 에서 조건에 맞는 Tuple 삭제
+
+= 2. DCL
+  -> 1. COMMIT => 명령에 의해 수행된 결과, 실제 물리적 Disk 에 저장, DB 조작 작업 정상적으로 완료, 명령어
+  -> 2. ROLLBACK => 아직 COMMIT 되지 않은 변경된 모든 내용들을 취소, DB 를 이전 상태로 되돌리는 명령어
+  -> 3. GRANT => DB 사용자에게 사용 권한 부여
+  -> 4. REVOKE => DB 사용자의 사용 권한 취소
+
+Table 기본 키 (Primary Key) 로 지정된 속성에 관한 설명으로 가장 거리가 먼 것 (No.55 -> 4)
+1. NOT NULL 로 널 값을 가지지 않음
+2. Relation 에서 Tuple 구별 가능
+3. 외래키로 참조될 수 있음
+4. 검색 시 반드시 필요
+
+= 1. 후보키 중, 선정된 주키 (MAIN KEY) 로 중복된 값 가질 수 없음
+= 2. 한 Relation 에서 특정 Tuple 을 유일하게 구별할 수 있는 속성
+= 3. 기본 Key 는 후보 Key 의 성질 가짐, Tuple 식별 위한 반드시 필요한 Key
+= 4. 기본 Key 는 NULL 값 가질 수 없음, 기본 Key 로 설정된 속성에는 NULL 값이 있어서는 안됨
+
+Data Model 의 구성 요소, Data 구조에 따라 개념 & 컴퓨터 세계에서 실제 표현된 값들을 처리하는 작업 (No.56 -> 4)
+1. Relation
+2. Data Structure
+3. Constraint
+4. Operation
+
+= 1. Data Model 의 구성 요소
+  -> 1. Structure => 논리적 개체 타입들 간 관계, Data 구조 & 정적 성질
+  -> 2. Operation => 실제 Data 처리 작업에 대한 명세, 조작하는 기본 도구
+  -> 3. Constraint => DB 에 저장될 수 있는 실제 Data 의 논리적인 제약 도구
+
+= 2. Data Modeling 구성 요소
+  -> 1. Relation (논리적 구조)
+  -> 2. Operation (연산)
+  -> 3. Constraint (제약 조건)
+
+= 3. 논리 Data Model 의 구성 요소 -> 개체 & 속성 & 관계
+
+다음 [조건] 부합, SQL 문 작성, 빈칸 내용 채우기 ('팀코드' 및 '이름' 은 속성, '직원' 은 Table) (No.57 -> 4)
+
+[조건]
+이름 '정도일', 팀원이 소속된 TeamCode 이용, 해당 Team 에 소속된 팀원들이 이름 출력
+
+[SQL 문]
+SELECT 이름 FROM 직원 WHERE 팀코드 = ();
+
+1. WHERE 이름 = '정도일';
+2. SELECT 팀코드 FROM 이름 WHERE 직원 = '정도일';
+3. WHERE 직원 = '정도일';
+4. SELECT 팀코드 FROM 직원 WHERE 이름 = '정도일';
+
+= 1. 하위 질의문은 하위 질의 먼저 처리, 검색된 결과는 상위 질의에 적용되어 검색
+= 2. 직원 Table, "정도일" 팀원의 Team Code 검색, 상위 질의에 반환
+
+무결성 제약조건 중, 개체 무결성 제약조건에 대한 설명으로 옳은 것 (No.58 -> 2)
+1. Relation 내 Tuple 들이 각 속성의 Domain 에 정해진 값만을 가져야 함
+2. 기본 Key 는 NULL 값을 가져서는 안되며, Releation 내에 오직 하나의 값만 존재해야 함
+3. 자식 Relation 의 외래키는 부모 Relation 의 기본키와 Domain 이 동일해야 함
+4. 자식 Relation 의 값 변경, 부모 Relation 제약 받음
+
+= 1. Primary Key
+  -> 1. Table 의 각 Record 를 고유 식별 Field, Field 집합
+  -> 2. Table 에 기본 Key 설정은 필수 아님
+  -> 3. 기본 Key 를 설정 X, 다른 Table 과의 관계 설정 가능
+  -> 4. 기본 Key 를 혼합속성 (다수 Field) 에 설정 가능
+
+= 2. 개체 무결성 -> 각 Relation 의 기본 Key 구성하는 속성, NULL 값, 중복 값 가질 수 없음
+= 3. 참조 무결성 -> 외래 Key 값 = NULL, 참조하는 Relation 기본 Key 값 동일
+= 4. 도메인 무결성 -> 속성들 값은 정의된 도메인에 속한 값
+= 5. 고유 무결성 -> 특정 속성에 대해 고유 값 소유 조건, Relaton 의 각 Tuple 이 가진 속성 값들은 서로 달라야 함
+= 6. NULL 무결성 -> Relation 의 특정 속성 값은 NULL 될 수 없음
+= 7. Key 무결성 -> 각 Relation 은 최소한 한 개 이상의 Key 가 존재해야 함
+
+관계 Data Model 에서 Relation 에 포함되어 있는 Tuple 의 수 (No.59 -> 2)
+1. Degree
+2. Cardinality
+3. Attribute
+4. Cartesian product
+
+= 1. 차수 (Degree) -> 속성 수
+= 2. 카디널리티 (Cardinality) -> 튜플 수 (기수)
+
+사용자 'PARK' 에게 Table 생성할 수 있는 권한 부여, SQL 문 구성으로 빈칸에 적합한 것 (No.60 -> 1)
+
+[SQL 문]
+GRANT () PARK;
+
+1. CREATE TABLE TO
+2. CREATE TO
+3. CREATE FROM
+4. CREATE TABLE FROM
+
+= PARK 에게 [CREATE TABLE] 권한 취소 => REVOKE CREATE TABLE FROM PARK;
