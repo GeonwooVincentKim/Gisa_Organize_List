@@ -1,0 +1,197 @@
+C언어에서 문자열 처리 함수의 서식과 그 기능의 연결로 틀린 것 (No.61 -> 3)
+1. strlen(s) - s의 길이
+2. strcpy(s1, s2) - s2 를 s1으로 복사
+3. strcmp(s1, s2) - s1 과 s2 연결
+4. strrev(s) - s 를 거꾸로 반환
+
+= 1. strcat - 문자열 연결 함수
+= 2. strcmp - 문자열 비교
+
+c언어 프로그램 실행 결과 (No.62 -> 2)
+
+#include <stdio.h>
+int main(int argc, char*argv[]) {
+  int a = 5, b = 3, c = 12;
+  int t1, t2, t3;
+
+  t1 = a && b;
+  t2 = a || b;
+  t3 = !c;
+
+  printf("%d", t1 + t2 + t3);
+  return 0;
+}
+
+1. 0
+2. 2
+3. 5
+4. 14
+
+= 1. a && b -> 1 (AND 연산)
+= 2. a || b -> 1 (OR 연산)
+= 3. !c -> 0 (NOT 연산)
+= 4. 1 + 1 + 0 = 2 (최종 정답)
+= 5. C언어 연산자에서는 0이 아닌 모든 값은 1 (TRUE) 로 보며, a=b=c=1 로 바꿔서 대입해도 같은 결과가 나옴
+
+다음 Python 프로그램의 실행 결과, 빈칸 채우기 (No.65 -> 2)
+
+x = 20
+if x == 10:
+    print("10")
+() x == 20:
+    print("20")
+else:
+    print("other")
+
+
+1. either
+2. elif
+3. else if 
+4. else
+
+= python 조건문 -> if, elif, else
+
+다음에서 설명하는 프로세스 기법
+
+최소 작업 우선 (SJF) 기법의 약점 보완, 비선점 스케줄링 기법, 우선순위 판별
+우선순위 = (대기한 시간 + 서비스를 받을 시간) / 서비스를 받을 시간
+
+1. FIFO 스케줄링
+2. RR 스케줄링
+3. HRN 스케줄링
+4. MQ 스케줄링
+
+= 1. 비선점 스케줄링
+= 2. 대기시간 및 서비스 시간 이용, 긴 작업 & 짧은 작업 간 지나친 불평등 해소 가능
+= 3. 우선순위를 계산 숫자가 높은 것부터 낮은 순으로 순위 부여
+= 4. (대기 시간 + 서비스 시간) / 서비스 시간 = 우선 순위 값 -> 값 클수록 우선순위 높음
+
+UNIX OS 에 관한 특징으로 틀린 것 (No.68 -> 2)
+1. 하나 이상의 작업에 대해서 Background 수행 가능
+2. Multi-User 지원, Multi-Tasking 지원 X
+3. Tree 구조 File System
+4. 이식성 높고, 장치 간 호환성 높음
+
+= UNIX 운영체제
+  -> 1. Server 용 Computer
+  -> 2. time sharing system 위해 설계된 대화식 OS, C언어 작성되어 이식성 높고, 장치간 호환성 높음
+  -> 3. Multi user, Multi tasking 모두 지원, Tree 구조의 File System
+
+Python Data Type 중, Sequence Data Type 에 해당, 주어진 순서 저장 가능, 저장된 내용 변경 X (No.70 -> 4)
+1. 복소수 (complex) Type
+2. List Type
+3. Dict Type
+4. Tuple Type
+
+= 1. List -> 가변형
+= 2. Tuple -> 불변형
+= 3. List (Sequence) -> 순서 O, 가변
+= 4. Tuple (Sequence) -> 순서 O, 불편
+= 5. Set (Set) -> 순서 X, 중복 X
+= 6. Map (Dictionary) -> 순서 X, Key-Value 쌍 {'a': 1, 'b': 2, 'c': 3}
+
+다음 JAVA Program 실행 결과 (No.61 -> 2)
+
+public class Rarr {
+  static int[] marr() {
+    int temp[] = new int[4];
+    
+    for (int i = 0; i < temp.length; i++) {
+        temp[i] = i;
+    }
+    return temp;
+  }
+
+  public static void main(String[] args) {
+    int iarr[];
+    iarr = marr();
+
+    for (int i = 0; i < arr.length; i++)
+      System.out.print(iarr[i] + " ");
+  }
+}
+
+1. 1 2 3 4
+2. 0 1 2 3
+3. 1 2 3
+4. 0 1 2
+
+= 0 ~ 4까지 차례대로
+
+다음 JAVA Program 의 실행 결과 (No.72-> 2)
+
+public class ovr {
+  public static void main(String[] args) {
+    int a = 1, b = 2, c = 3, d = 4;
+    int mx, mn;
+
+    mx = a < b ? b : a;
+    if (mx == 1) {
+	mn = a > mx ? b : a;
+    } else {
+	mn = b < mx ? b : c;
+    }
+
+    System.out.println(mn);
+  }
+}
+
+1. 1
+2. 2
+3. 3
+4. 4
+
+= 1. mx = a < b ? b : a;
+= 2. a < b 조건문 참 = 전자인 b, 거짓 = a -> mx 값
+= 3. a = 1, b = 2, a < b 는 참이므로 mx  = b = 2
+= 4. if 절 조건 mx == 1 은 mx = 2, 거짓, else 문으로 넘어감
+= 5. mn = b < mx ? d : c;
+= 6. b = 2, mx = 2, b < mx 조건은 거짓, 후자인 c의 값이 mn 에 대입
+= 7. mn = c = 3 -> mn 을 출력하게 되면 c의 값 3이 나옴
+
+다음 중 Myers 가 구분한 응집도 (Cohesion) 의 정도, 가장 낮은 응집도를 갖는 단계 (No.73 -> 4)
+1. 순차적 응집도 (Sequential Cohesion)
+2. 기능적 응집도 (Functional Cohesion)
+3. 시간적 응집도 (Temporal Cohesion)
+4. 우연적 응집도 (Coincidental Cohesion)
+
+= 응집도 -> (강) 기능 > 순차 > 교환 > 절차 > 시간 > 논리 > 우연 (약)
+
+다음 C언어 프로그램 실행 결과 (No.74 -> 2)
+
+#include <stdio.h>
+int main(int arge, char *argv[]) {
+  int n1 = 1, n2 = 2, n3 = 3;
+  int r1, r2, r3;
+
+  r1 = (n2 <= 2) || (n3 > 3);
+  r2 = !n3;
+  r3 = (n1 > 1) && (n2 < 3);
+
+  printf("%d", r3 - r2 + r1);
+  return 0;
+}
+
+1. 0
+2. 1
+3. 2
+4. 3
+
+= 1. r1 -> or 연산 한쪽만 참, 1 반환 n2 <= 2 (참) => 1
+= 2. r2 -> =! 부정연산자 3, 부정 0 반환 => 0
+= 3. r3 -> and 연산 둘 다 참이여야 1반환 n1 > 1 (거짓) => 0
+= 4. 0 - 0 + 1 = 1
+
+한 Module 이 다른 Module 의 내부 기능 및 그 내부 자료를 참조하는 경우의 결합도 (No.78 -> 1)
+1. 내용 결합도 (Content Coupling)
+2. 제어 결합도 (Control Coupling)
+3. 공통 결합도 (Common Coupling)
+4. 스탬프 결합도 (Stamp Coupling)
+
+= 1. Stamp Coupling -> 두 Module 매개변수로 자료 전달, 자료구조 형태로 전달, 이용 시 Data 결합
+= 2. Content Coupling -> 하나의 Module, 직접 다른 Module 내용 참조, 두 Module 은 내용적으로 결합
+= 3. Common Coupling -> 두 Module 이 동일한 전역 Data 접근, 공통 결합
+= 4. Coupling -> 두 Module 간 상호작용, 의존도 정도
+
+= 5. Common Coupling -> Parameter X, Module 밖 선언 전연 변수 참조, 전역 변수 갱신, 상호작용
+= 6. Bla bla "전역변수" (단어가 있으면) Common Coupling
